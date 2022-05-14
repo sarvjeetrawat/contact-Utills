@@ -17,6 +17,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ContactUtils">
+
+
+        <activity android:name=".ui.DialogCheckActivity"
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            />
+
+
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
