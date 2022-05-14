@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="isVisibleCheckBox"
+            type="Boolean" />
+
+        <variable
+            name="model"
+            type="com.example.contactutils.db.ContactListModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:colorBackground">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageLay"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#f1f1f1"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_person_24"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/contactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.contactName}"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                app:layout_constraintTop_toTopOf="@id/imageLay"
+                app:layout_constraintStart_toEndOf="@id/imageLay"
+                app:layout_constraintBottom_toTopOf="@id/number"
+                android:layout_marginLeft="16dp"
+                tools:text="Sarvjeet Rawat"/>
+
+            <!-- <com.google.android.material.textview.MaterialTextView
+                 android:id="@+id/originalName"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="@{model.dummyName}"
+                 android:textSize="12sp"
+                 app:layout_constraintTop_toBottomOf="@id/appName"
+                 app:layout_constraintStart_toEndOf="@id/imageLay"
+                 android:layout_marginLeft="16dp"
+                 tools:text="Pushparaj Kannan"/>-->
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(model.phoneNumber)}"
+                app:layout_constraintBottom_toBottomOf="@id/imageLay"
+                app:layout_constraintStart_toEndOf="@id/imageLay"
+                app:layout_constraintTop_toBottomOf="@id/contactName"
+                android:layout_marginLeft="16dp"
+                android:textSize="14sp"
+                tools:text="97789190940"
+                android:textColor="?colorOnSecondary"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintWidth_percent=".85"
+            android:layout_marginRight="10dp"
+            android:background="@color/green_500"/>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{model.isChecked}"
+            android:visibility="@{isVisibleCheckBox ? View.VISIBLE : View.GONE }"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:constraint_referenced_ids="topLay,view"
+            app:flow_wrapMode="aligned"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
