@@ -39,13 +39,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:layout_marginEnd="197dp"
                 android:text="@{model.contactName}"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                 android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@id/imageLay"
                 app:layout_constraintEnd_toStartOf="@+id/close"
-                app:layout_constraintStart_toEndOf="@id/imageLay"
-                app:layout_constraintTop_toTopOf="@id/imageLay"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Shubham gai" />
 
 
@@ -54,34 +54,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="@dimen/dimen_20dp"
                 android:drawablePadding="16dp"
                 android:gravity="center_vertical"
                 android:text="@{model.phoneNumber}"
                 android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/imageLay"
+                app:layout_constraintStart_toStartOf="@+id/name"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:text="9789190940" />
 
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/imageLay"
+            <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_margin="16dp"
-                app:cardBackgroundColor="#f1f1f1"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="0dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_person_24"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                >
-
-                <ImageView
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_baseline_person_24"/>
-
-            </com.google.android.material.card.MaterialCardView>
+                app:layout_constraintTop_toTopOf="parent" />
 
 
 

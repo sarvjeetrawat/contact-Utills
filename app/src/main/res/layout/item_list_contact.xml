@@ -63,16 +63,6 @@
                 android:layout_marginLeft="16dp"
                 tools:text="Sarvjeet Rawat"/>
 
-            <!-- <com.google.android.material.textview.MaterialTextView
-                 android:id="@+id/originalName"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="@{model.dummyName}"
-                 android:textSize="12sp"
-                 app:layout_constraintTop_toBottomOf="@id/appName"
-                 app:layout_constraintStart_toEndOf="@id/imageLay"
-                 android:layout_marginLeft="16dp"
-                 tools:text="Pushparaj Kannan"/>-->
 
             <TextView
                 android:id="@+id/number"
@@ -84,7 +74,7 @@
                 app:layout_constraintTop_toBottomOf="@id/contactName"
                 android:layout_marginLeft="16dp"
                 android:textSize="14sp"
-                tools:text="97789190940"
+                tools:text="9998889998"
                 android:textColor="?colorOnSecondary"
                 />
 
@@ -107,7 +97,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="@{model.isChecked}"
-            android:visibility="@{isVisibleCheckBox ? View.VISIBLE : View.GONE }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

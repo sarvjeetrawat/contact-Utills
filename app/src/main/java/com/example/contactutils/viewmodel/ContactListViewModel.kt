@@ -2,7 +2,6 @@ package com.example.contactutils.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
-import com.example.contactutils.db.ContactListDao
 import com.example.contactutils.db.ContactListModel
 import com.example.contactutils.repository.ContactRepository
 
@@ -17,6 +16,7 @@ class ContactListViewModel(val mContext:Context, val repository: ContactReposito
     suspend fun insertEntry(model: ContactListModel){
         repository.insertData(model)
     }
+
 
 
 }
